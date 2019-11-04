@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://mysqldb:3306/school
+    username: school
+    password: demo4you
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  main:
+    banner-mode: console
+
+---
+# JNDI
+spring:
+  profiles: prod
+  main:
+    banner-mode: off
+  datasource:
+    jndi-name: my-jndi
+---
+spring:
+  profiles: swagger
